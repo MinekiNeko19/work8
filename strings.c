@@ -15,16 +15,16 @@ int mystrlen(char *s) {
 }
 
 char * mystrcpy( char *dest, char *source ) {
-    // int i;
-    // for (i = 0; i < sizeof(dest); i++) {
-    //     if (source[i] != 0) {
-    //         dest[i] = source[i];
-    //     } else {
-    //         dest[i] = source[i];
-    //         i = sizeof(dest);
-    //     }
-    // }
-    return dest; // issues with return type
+    int i;
+    for (i = 0; i < sizeof(dest); i++) {
+        if (source[i] != 0) {
+            dest[i] = source[i];
+        } else {
+            dest[i] = source[i];
+            i = sizeof(dest);
+        }
+    }
+    return &dest; // issues with return type
 }
 
 // char * mystrncat( char *dest, char *source, int n) {

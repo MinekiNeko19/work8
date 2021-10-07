@@ -45,23 +45,32 @@ char * mystrncat( char *dest, char *source, int n) {
     // }
 
     // printf("i got here");
-    dest += strlen(dest);
+    // dest += strlen(dest);
     // printf("i got here");
-    while (n > 0) {
-        *dest = *source;
-        dest++;
-        source++;
-    }
-    *dest = 0;
+    // while (n > 0) {
+    //     *dest = *source;
+    //     dest++;
+    //     source++;
+    // }
+    // *dest = 0;
 
     // printf("%s\n", dest);
     // return dest; // issues with return type 
     return NULL;
 }
 
-// int mystrcmp( char *s1, char *s2 ) {
-
-// }
+int mystrcmp( char *s1, char *s2 ) {
+    // int same = 0;
+    while(*s1 == *s2 && ((*s1 != 0) || (*s2 != 0))) {
+        printf("s1 val: %c %d\ts2 val: %c %d\n",*s1, *s1, *s2, *s2);
+        // if (*s1 != *s2) {
+        //      return (*s2 - *s1);
+        // }
+        s1++;
+        s2++;
+    }
+    return (s2 - s1)/4; // why divide by 4? but ok
+}
 
 // char * mystrchr( char *s, char c ) {
 

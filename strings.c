@@ -15,21 +15,41 @@ int mystrlen(char *s) {
 }
 
 char * mystrcpy( char *dest, char *source ) {
-    int i;
-    for (i = 0; i < sizeof(dest); i++) {
-        if (source[i] != 0) {
-            dest[i] = source[i];
-        } else {
-            dest[i] = source[i];
-            i = sizeof(dest);
-        }
-    }
-    return &dest; // issues with return type
+    // int i;
+    // for (i = 0; i < sizeof(dest); i++) {
+    //     if (*source != 0) {
+    //         *dest = *source;
+    //         dest++;
+    //         source++;
+    //     } else {
+    //         *dest = '\0';
+    //         i = sizeof(dest);
+    //     }
+    // }
+    // printf("%s\n", dest);
+    dest = source;
+    // printf("%s\n", dest);
+    // return dest; // issues with return type    
+    return NULL; // since the code seems to work other than the return type it will return null for now ask about in class and try it on the school computer
 }
 
-// char * mystrncat( char *dest, char *source, int n) {
+char * mystrncat( char *dest, char *source, int n) {
+    printf("%s\n", dest);
 
-// }
+    char temp[n];
+    int i = 0;
+    while (n > 0) {
+        temp[i] = source[i];
+        i++;
+        n--;
+    }
+
+    // printf("%s\n",temp);
+
+    printf("%s\n", dest);
+    // return dest; // issues with return type 
+    return NULL;
+}
 
 // int mystrcmp( char *s1, char *s2 ) {
 

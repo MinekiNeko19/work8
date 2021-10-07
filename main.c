@@ -47,16 +47,16 @@ int main() {
   printf("[standard]:\t[%p]\n", strchr(s1, 'z') );
   printf("[mine]:\t\t[%p]\n", mystrchr(s1, 'z') );
 
-  // printf("\nTesting strcmp\n");
-  // printf("\tComparting ab to abc:\n");
-  // printf("\t\t[standard]:\t[%d]\n", strcmp("ab", "abe") );
-  // printf("\t\t[mine]:\t\t[%d]\n", mystrcmp("ab", "abe") );
-  // printf("\tComparting abc to ab:\n");
-  // printf("\t\t[standard]:\t[%d]\n", strcmp("abc", "ab") );
-  // printf("\t\t[mine]:\t\t[%d]\n", mystrcmp("abc", "ab") );
-  // printf("\tComparting abc to abc:\n");
-  // printf("\t\t[standard]:\t[%d]\n", strcmp("abc", "abc") );
-  // printf("\t\t[mine]:\t\t[%d]\n", mystrcmp("abc", "abc") );
+  printf("\nTesting strcmp\n");
+  printf("\tComparting ab to abc:\n");
+  printf("\t\t[standard]:\t[%d]\n", strcmp("ab", "abe") );
+  printf("\t\t[mine]:\t\t[%d]\n", mystrcmp("ab", "abe") );
+  printf("\tComparting abc to ab:\n");
+  printf("\t\t[standard]:\t[%d]\n", strcmp("abc", "ab") );
+  printf("\t\t[mine]:\t\t[%d]\n", mystrcmp("abc", "ab") );
+  printf("\tComparting abc to abc:\n");
+  printf("\t\t[standard]:\t[%d]\n", strcmp("abc", "abc") );
+  printf("\t\t[mine]:\t\t[%d]\n", mystrcmp("abc", "abc") );
 
   return 0;
 }

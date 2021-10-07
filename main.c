@@ -23,19 +23,17 @@ int main() {
   printf("[standard]:\t%lu\n", strlen(s3) );
   printf("[mine]:\t\t%d\n", mystrlen(s3) );
 
+  // printf("%p, %s\n", s1,s1);
   printf("\nTesting strcpy(s1, s2):\n");
   printf("[standard]:\t[%s]\n", strcpy(s1, s2) );
   printf("[mine]:\t\t[%s]\n", mystrcpy(s1, s2) );
-  printf("[standard]:\t%lu\n", strlen(s1) );
-  for (int i = 0; i < 5; i++) {
-    printf("%c ", s1[i]);
-  }
-  printf("\n");
+  // successfully changes the values in the str but doesn't return pointer
+  // printf("%p, %s\n", s1,s1);
   
-  // printf("\nTesting strncat(s1, s2, 3):\n");
-  // printf("[standard]:\t[%s]\n", strncat(s1, s2, 3) );
-  // s1[12] = 0;
-  // printf("[mine]:\t\t[%s]\n", mystrncat(s1, s2, 3) );
+  printf("\nTesting strncat(s1, s2, 3):\n");
+  printf("[standard]:\t[%s]\n", strncat(s1, s2, 3) );
+  s1[12] = 0;
+  printf("[mine]:\t\t[%s]\n", mystrncat(s1, s2, 3) );
 
   // printf("\nTesting strchr(s1, 'l'):\n");
   // printf("[standard]:\t[%p]\n", strchr(s1, 'l') );

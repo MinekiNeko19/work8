@@ -52,7 +52,6 @@ char * mystrncat( char *dest, char *source, int n) {
     //     dest++;
     //     source++;
     // }
-    // *dest = 0;
 
     // printf("%s\n", dest);
     // return dest; // issues with return type 
@@ -69,7 +68,9 @@ int mystrcmp( char *s1, char *s2 ) {
         s1++;
         s2++;
     }
-    return (s2 - s1)/4; // why divide by 4? but ok
+    if (*s2 > *s1) return -1;
+    if (*s1 > *s2) return 1;
+    return 0;
 }
 
 char * mystrchr( char *s, char c ) {

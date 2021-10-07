@@ -15,6 +15,15 @@ int mystrlen(char *s) {
 }
 
 char * mystrcpy( char *dest, char *source ) {
+    char *p = dest;
+    while (*source) {
+        *p = *source;
+        p++;
+        source++;
+    }
+    *p = 0;
+    return dest;
+
     // int i;
     // for (i = 0; i < strlen(dest); i++) {
     //     if (*source != 0) {
@@ -23,14 +32,14 @@ char * mystrcpy( char *dest, char *source ) {
     //         source++;
     //     } else {
     //         *dest = '\0';
-    //         i = strlen(dset);
+    //         i = strlen(dest);
     //     }
     // }
     // printf("%s\n", dest);
-    dest = source;
+    // dest = source;
     // printf("%s\n", dest);
     // return dest; // issues with return type    
-    return NULL; // since the code seems to work other than the return type it will return null for now ask about in class and try it on the school computer
+    // return NULL; // since the code seems to work other than the return type it will return null for now ask about in class and try it on the school computer
 }
 
 char * mystrncat( char *dest, char *source, int n) {
@@ -71,14 +80,24 @@ int mystrcmp( char *s1, char *s2 ) {
     if (*s2 > *s1) return -1;
     if (*s1 > *s2) return 1;
     return 0;
+    // return *s1-*s2;
 }
 
 char * mystrchr( char *s, char c ) {
-    while (*s != 0) {
+    int i = 1;
+    while (*s && i) {
         if (*s == c) {
-            return s;
+            i = 0;
+        } else {
+            s++;
         }
-        s++;
     }
+    // while (*s != 0) {
+    //     if (*s == c) {
+    //         return s;
+    //     }
+    //     s++;
+    // }
+    if (!i) return s;
     return NULL;
 }

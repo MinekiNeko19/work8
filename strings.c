@@ -72,6 +72,12 @@ int mystrcmp( char *s1, char *s2 ) {
     return (s2 - s1)/4; // why divide by 4? but ok
 }
 
-// char * mystrchr( char *s, char c ) {
-
-// }
+char * mystrchr( char *s, char c ) {
+    while (*s != 0) {
+        if (*s == c) {
+            return s;
+        }
+        s++;
+    }
+    return NULL;
+}

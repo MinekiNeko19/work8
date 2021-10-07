@@ -26,6 +26,11 @@ int main() {
   printf("\nTesting strcpy(s1, s2):\n");
   printf("[standard]:\t[%s]\n", strcpy(s1, s2) );
   printf("[mine]:\t\t[%s]\n", mystrcpy(s1, s2) );
+  printf("[standard]:\t%lu\n", strlen(s1) );
+  for (int i = 0; i < 5; i++) {
+    printf("%c ", s1[i]);
+  }
+  printf("\n");
   
   // printf("\nTesting strncat(s1, s2, 3):\n");
   // printf("[standard]:\t[%s]\n", strncat(s1, s2, 3) );

@@ -37,19 +37,16 @@ char * mystrncat( char *dest, char *source, int n) {
 }
 
 int mystrcmp( char *s1, char *s2 ) {
-    // int same = 0;
-    while(*s1 == *s2 && ((*s1 != 0) || (*s2 != 0))) {
-        printf("s1 val: %c %d\ts2 val: %c %d\n",*s1, *s1, *s2, *s2);
-        // if (*s1 != *s2) {
-        //      return (*s2 - *s1);
-        // }
-        s1++;
-        s2++;
+    int diff = 0;
+    while (*s1 && *s2) {
+        if (*s1 > *s2) {
+            diff = 1;
+        }
+        if (*s1 < *s2) {
+            diff = -1;
+        }
     }
-    if (*s2 > *s1) return -1;
-    if (*s1 > *s2) return 1;
-    return 0;
-    // return *s1-*s2;
+    return diff;
 }
 
 char * mystrchr( char *s, char c ) {
@@ -61,12 +58,11 @@ char * mystrchr( char *s, char c ) {
             s++;
         }
     }
-    // while (*s != 0) {
-    //     if (*s == c) {
-    //         return s;
-    //     }
-    //     s++;
-    // }
-    if (!i) return s;
+    if (!i) {
+        return s;
+    }
+    if (c == 0) {
+        return s;
+    }
     return NULL;
 }

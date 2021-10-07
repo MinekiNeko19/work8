@@ -16,14 +16,14 @@ int mystrlen(char *s) {
 
 char * mystrcpy( char *dest, char *source ) {
     // int i;
-    // for (i = 0; i < sizeof(dest); i++) {
+    // for (i = 0; i < strlen(dest); i++) {
     //     if (*source != 0) {
     //         *dest = *source;
     //         dest++;
     //         source++;
     //     } else {
     //         *dest = '\0';
-    //         i = sizeof(dest);
+    //         i = strlen(dset);
     //     }
     // }
     // printf("%s\n", dest);
@@ -34,19 +34,27 @@ char * mystrcpy( char *dest, char *source ) {
 }
 
 char * mystrncat( char *dest, char *source, int n) {
-    printf("%s\n", dest);
+    // printf("%s\n", dest);
 
-    char temp[n];
-    int i = 0;
+    // int i = 0;
+    // for (i = 0; i < n; i++) {
+    //     printf("i: %d\n",i);
+    //     dest[strlen(dest)+i] = source[i];
+    //     printf("%c\n", source[i]);
+    //     printf("%d\n", strlen(dest)+i);
+    // }
+
+    // printf("i got here");
+    dest += strlen(dest);
+    // printf("i got here");
     while (n > 0) {
-        temp[i] = source[i];
-        i++;
-        n--;
+        *dest = *source;
+        dest++;
+        source++;
     }
+    *dest = 0;
 
-    // printf("%s\n",temp);
-
-    printf("%s\n", dest);
+    // printf("%s\n", dest);
     // return dest; // issues with return type 
     return NULL;
 }
